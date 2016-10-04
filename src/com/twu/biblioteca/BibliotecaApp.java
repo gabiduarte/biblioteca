@@ -17,9 +17,9 @@ public class BibliotecaApp {
     }
 
     public String showLibraryBooks() {
-        List<String> books = new ArrayList<String>();
-        books.add("Harry Potter");
-        books.add("TDD by Example");
+        List<Book> books = new ArrayList<Book>();
+        books.add(new Book("Harry Potter", "JK Rowling", "1998"));
+        books.add(new Book("TDD by Example", "Kent Beck", "2003"));
 
         Library library = new Library(books);
         return library.showBooks();

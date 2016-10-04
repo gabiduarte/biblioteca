@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private List<String> books = new ArrayList<String>();
+    private List<Book> books = new ArrayList<Book>();
 
-    public Library(List<String> books) {
+    public Library(List<Book> books) {
         this.books = books;
     }
 
@@ -16,8 +16,8 @@ public class Library {
         if (books.size() > 0) {
             listOfBooks = "Books Available:\n\n";
 
-            for (String book: books) {
-                listOfBooks += book + "\n";
+            for (Book book: books) {
+                listOfBooks += book.showDetails() + "\n";
             }
         }
 
