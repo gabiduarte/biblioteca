@@ -39,5 +39,7 @@ public class BibliotecaApp {
         if (option.equals("1")) {
             return showLibraryBooks();
         }
+
+        return "";
     }
 }
