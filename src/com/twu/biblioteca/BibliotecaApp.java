@@ -29,10 +29,16 @@ public class BibliotecaApp {
         System.out.println(welcome());
 
         System.out.println("\n\nChoose from the option below:\n1 - List books");
-        Scanner reader = new Scanner(System.in);
-        String userMenuOption = reader.next();
 
-        System.out.println(menu(userMenuOption));
+        Scanner reader = new Scanner(System.in);
+        String userOption = reader.next();
+
+        while(menu(userOption) == null) {
+            System.out.println("Select a valid option!");
+            userOption = reader.next();
+        }
+
+        System.out.println(menu(userOption));
     }
 
     public String menu(String option) {
@@ -40,6 +46,6 @@ public class BibliotecaApp {
             return showLibraryBooks();
         }
 
-        return "Select a valid option!";
+        return null;
     }
 }

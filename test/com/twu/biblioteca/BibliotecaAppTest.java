@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class BibliotecaAppTest {
 
@@ -20,8 +21,8 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldReturnInvalidOptionMessageGivenIncorrectOptionOnMenu() throws Exception {
+    public void shouldReturnNullGivenIncorrectOptionOnMenu() throws Exception {
         BibliotecaApp app = new BibliotecaApp();
-        assertEquals("Select a valid option!", app.menu("AAA"));
+        assertNull(app.menu("AAA"));
     }
 }
