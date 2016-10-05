@@ -25,4 +25,10 @@ public class BibliotecaAppTest {
         BibliotecaApp app = new BibliotecaApp();
         assertNull(app.menu("AAA"));
     }
+
+    @Test
+    public void shouldReturnGoodbyeMessageGivenQuitOption() throws Exception {
+        BibliotecaApp app = new BibliotecaApp();
+        assertEquals("Thanks for using Biblioteca!", app.menu("9"));
+    }
 }

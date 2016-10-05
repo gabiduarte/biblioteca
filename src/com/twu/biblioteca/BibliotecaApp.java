@@ -25,9 +25,8 @@ public class BibliotecaApp {
         return library.showBooks();
     }
 
-    public void run() {
+    private void run() {
         System.out.println(welcome());
-
         System.out.println(UIStrings.MENU_OPTIONS);
 
         Scanner reader = new Scanner(System.in);
@@ -44,6 +43,10 @@ public class BibliotecaApp {
     public String menu(String option) {
         if (option.equals("1")) {
             return showLibraryBooks();
+        }
+
+        if (option.equals("9")) {
+            return UIStrings.MENU_QUIT;
         }
 
         return null;
