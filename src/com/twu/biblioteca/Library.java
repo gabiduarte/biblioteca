@@ -23,4 +23,9 @@ public class Library {
 
         return listOfBooks;
     }
+
+    public boolean checkout(Book book) {
+        book.setAvailable(false);
+        return !book.isAvailable();
+    }
 }

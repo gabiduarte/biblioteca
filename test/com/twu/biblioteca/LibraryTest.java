@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class LibraryTest {
     private List<Book> books = new ArrayList<Book>();
@@ -28,5 +30,15 @@ public class LibraryTest {
         List<Book> emptyBookList = new ArrayList<Book>();
         Library library = new Library(emptyBookList);
         assertEquals("No available books in Biblioteca", library.showBooks());
+    }
+
+    @Test
+    public void shouldCheckoutAvailableBook() throws Exception {
+        Library library = new Library(books);
+        Book book = books.get(0);
+
+        assertTrue(book.isAvailable());
+        library.checkout(book);
+        assertFalse(book.isAvailable());
     }
 }
