@@ -40,6 +40,6 @@ public class BibliotecaApp {
             return showLibraryBooks();
         }
 
-        return "";
+        return "Select a valid option!";
     }
 }

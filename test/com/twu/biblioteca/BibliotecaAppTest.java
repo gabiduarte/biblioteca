@@ -18,4 +18,10 @@ public class BibliotecaAppTest {
                 "Harry Potter - JK Rowling - 1998\n" +
                 "TDD by Example - Kent Beck - 2003\n", app.menu("1"));
     }
+
+    @Test
+    public void shouldReturnInvalidOptionMessageGivenIncorrectOptionOnMenu() throws Exception {
+        BibliotecaApp app = new BibliotecaApp();
+        assertEquals("Select a valid option!", app.menu("AAA"));
+    }
 }
