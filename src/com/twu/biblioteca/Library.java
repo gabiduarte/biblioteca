@@ -11,13 +11,13 @@ public class Library {
     }
 
     public String showBooks() {
-        String listOfBooks = "No available books in Biblioteca";
+        String listOfBooks = UIStrings.LIBRARY_BOOKS_UNAVAILABLE;
 
         if (books.size() > 0) {
-            listOfBooks = "Books Available:\n\n";
+            listOfBooks = UIStrings.LIBRARY_BOOKS_AVAILABLE;
 
             for (Book book: books) {
-                listOfBooks += book.showDetails() + "\n";
+                listOfBooks += book.showDetails() + UIStrings.LINE_BREAK;
             }
         }
 

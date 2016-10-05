@@ -13,7 +13,7 @@ public class BibliotecaApp {
     }
 
     public String welcome() {
-        return "Welcome to Biblioteca!";
+        return UIStrings.WELCOME_MESSAGE;
     }
 
     public String showLibraryBooks() {
@@ -28,13 +28,13 @@ public class BibliotecaApp {
     public void run() {
         System.out.println(welcome());
 
-        System.out.println("\n\nChoose from the option below:\n1 - List books");
+        System.out.println(UIStrings.MENU_OPTIONS);
 
         Scanner reader = new Scanner(System.in);
         String userOption = reader.next();
 
         while(menu(userOption) == null) {
-            System.out.println("Select a valid option!");
+            System.out.println(UIStrings.MENU_INVALID_OPTION);
             userOption = reader.next();
         }
 
