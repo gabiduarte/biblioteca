@@ -2,19 +2,21 @@ package com.twu.biblioteca;
 
 
 public class Book {
+    private int id;
     private String name;
     private String author;
     private String year;
     private boolean isAvailable = true;
 
-    public Book(String name, String author, String year) {
+    public Book(int id, String name, String author, String year) {
+        this.id = id;
         this.name = name;
         this.author = author;
         this.year = year;
     }
 
     public String showDetails() {
-        return this.name + " - " + this.author + " - " + this.year;
+        return this.id + " - " + this.name + " - " + this.author + " - " + this.year;
     }
 
     public boolean isAvailable() {
@@ -23,5 +25,14 @@ public class Book {
 
     public void setAvailable(boolean isAvailable) {
         this.isAvailable = isAvailable;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+
+    public String getName() {
+        return name;
     }
 }

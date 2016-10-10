@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class BookTest {
     @Test
     public void shouldShowBookDetails() throws Exception {
-        Book book = new Book("TDD By Example", "Kent Beck", "2003");
+        Book book = new Book(2, "TDD By Example", "Kent Beck", "2003");
 
-        assertEquals("TDD By Example - Kent Beck - 2003", book.showDetails());
+        assertEquals("2 - TDD By Example - Kent Beck - 2003", book.showDetails());
     }
 }

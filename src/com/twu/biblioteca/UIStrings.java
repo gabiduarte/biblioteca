@@ -11,5 +11,6 @@ public class UIStrings {
     public static final String MENU_OPTIONS = LINE_BREAK +
             "Choose from the option below:" + LINE_BREAK  +
             "1 - List books" + LINE_BREAK +
+            "2 - Checkout books" + LINE_BREAK +
             "9 - Quit";
 }
