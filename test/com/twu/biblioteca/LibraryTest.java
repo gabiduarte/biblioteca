@@ -45,7 +45,7 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldReturnBookWhenSearchingWithValidID() throws Exception {
+    public void shouldFindBookWhenSearchingWithValidID() throws Exception {
         Book book = library.searchBook(1);
         assertEquals("Harry Potter", book.getName());
     }
