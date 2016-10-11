@@ -61,4 +61,14 @@ public class LibraryTest {
         unavailableBook.setAvailable(false);
         assertEquals("That book is not available.", library.checkout(unavailableBook));
     }
+
+    @Test
+    public void shouldCheckinUnavailableBook() throws Exception {
+        Book unavailableBook = new Book(1, "", "", "");
+        unavailableBook.setAvailable(false);
+        assertFalse(unavailableBook.isAvailable());
+        library.checkin(unavailableBook);
+        assertTrue(unavailableBook.isAvailable());
+    }
+
 }

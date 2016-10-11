@@ -46,4 +46,9 @@ public class Library {
 
         this.books = books;
     }
+
+    public void checkin(Book book) {
+        if (!book.isAvailable())
+            book.setAvailable(true);
+    }
 }
