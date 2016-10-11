@@ -15,25 +15,27 @@ public class BibliotecaApp {
     }
 
     public String showLibraryBooks() {
-        //TODO: createBookShelf is called also inside run. The test breaks without this bit below.
-        library.createBookShelf();
         return library.showBooks();
     }
 
-    private void run() {
+    public void run() {
         library.createBookShelf();
-
         System.out.println(welcome());
+
+        menuHandler();
+    }
+
+    private Object menuHandler() {
         System.out.println(UIStrings.MENU_OPTIONS);
+        String userInput = menu(getUserInput());
 
-        Scanner reader = new Scanner(System.in);
-        String userOption = reader.next();
-
-        System.out.println(menu(userOption));
-        while(menu(userOption) == null) {
+        if (userInput == null) {
             System.out.println(UIStrings.MENU_INVALID_OPTION);
-            userOption = reader.next();
+        } else {
+            System.out.println(userInput);
         }
+
+        return menuHandler();
     }
 
     public String menu(String option) {
@@ -41,9 +43,30 @@ public class BibliotecaApp {
             return showLibraryBooks();
         }
 
+        if (option.equals("2")) {
+            System.out.println(UIStrings.CHECKOUT_MENU);
+            Integer bookID;
+
+            try {
+                bookID = Integer.parseInt(getUserInput());
+            } catch (NumberFormatException e) {
+                return null;
+            }
+
+            Book chosenBook = library.searchBook(bookID);
+            library.checkout(chosenBook);
+
+            return UIStrings.CHECKOUT_SUCCESS;
+        }
+
         if (option.equals("9")) {
             return UIStrings.MENU_QUIT;
         }
         return null;
+    }
+
+    private String getUserInput() {
+        Scanner reader = new Scanner(System.in);
+        return reader.next();
     }
 }
