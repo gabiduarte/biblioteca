@@ -11,6 +11,8 @@ public class UIStrings {
     public static final String CHECKOUT_MENU = "Choose the ID of the book you want to checkout";
     public static final String CHECKOUT_SUCCESS = "Thank you! Enjoy the book";
     public static final String CHECKOUT_FAIL = "That book is not available.";
+    public static final String CHECKIN_MENU = "Choose the ID of the book you want to return";
+
 
     public static final String MENU_OPTIONS = MENU_HEADER + LINE_BREAK +
             "Choose from the option below:" + LINE_BREAK  +

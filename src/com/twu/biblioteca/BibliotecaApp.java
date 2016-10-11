@@ -43,30 +43,12 @@ public class BibliotecaApp {
 
         if (option.equals("2")) {
             System.out.println(UIStrings.CHECKOUT_MENU);
-            Integer bookID;
-
-            try {
-                bookID = Integer.parseInt(getUserInput());
-            } catch (NumberFormatException e) {
-                return null;
-            }
-
-            Book chosenBook = library.searchBook(bookID);
-            return library.checkout(chosenBook);
+            return library.checkout(searchBookFromUserInput());
         }
-        //TODO: 2 and 3 need refactoring.
+
         if (option.equals("3")) {
-            Integer bookID;
-
-            try {
-                bookID = Integer.parseInt(getUserInput());
-            } catch (NumberFormatException e) {
-                return null;
-            }
-
-            Book chosenBook = library.searchBook(bookID);
-            return library.checkin(chosenBook);
-
+            System.out.println(UIStrings.CHECKIN_MENU);
+            return library.checkin(searchBookFromUserInput());
         }
 
         if (option.equals("9")) {
@@ -78,5 +60,16 @@ public class BibliotecaApp {
     private String getUserInput() {
         Scanner reader = new Scanner(System.in);
         return reader.next();
+    }
+
+    private Book searchBookFromUserInput() {
+        Integer bookID;
+
+        try {
+            bookID = Integer.parseInt(getUserInput());
+        } catch (NumberFormatException e) {
+            return null;
+        }
+        return library.searchBook(bookID);
     }
 }
