@@ -54,6 +54,20 @@ public class BibliotecaApp {
             Book chosenBook = library.searchBook(bookID);
             return library.checkout(chosenBook);
         }
+        //TODO: 2 and 3 need refactoring.
+        if (option.equals("3")) {
+            Integer bookID;
+
+            try {
+                bookID = Integer.parseInt(getUserInput());
+            } catch (NumberFormatException e) {
+                return null;
+            }
+
+            Book chosenBook = library.searchBook(bookID);
+            return library.checkin(chosenBook);
+
+        }
 
         if (option.equals("9")) {
             return UIStrings.MENU_QUIT;

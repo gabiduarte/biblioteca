@@ -16,5 +16,6 @@ public class UIStrings {
             "Choose from the option below:" + LINE_BREAK  +
             "1 - List books" + LINE_BREAK +
             "2 - Checkout books" + LINE_BREAK +
+            "3 - Return books" + LINE_BREAK +
             "9 - Quit";
 }
