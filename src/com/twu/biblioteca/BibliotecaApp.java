@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class BibliotecaApp {
@@ -27,15 +28,13 @@ public class BibliotecaApp {
 
     private Object menuHandler() {
         System.out.println(UIStrings.MENU_OPTIONS);
-        String userInput = menu(getUserInput());
+        String userInput = getUserInput();
+        String menuResult = menu(userInput);
 
-        if (userInput == null) {
-            System.out.println(UIStrings.MENU_INVALID_OPTION);
-        } else {
-            System.out.println(userInput);
-        }
+        menuResult = (menuResult == null) ? UIStrings.MENU_INVALID_OPTION: menuResult;
+        System.out.println(menuResult);
 
-        return menuHandler();
+        return (userInput.equals("9")) ? null : menuHandler();
     }
 
     public String menu(String option) {
@@ -54,9 +53,7 @@ public class BibliotecaApp {
             }
 
             Book chosenBook = library.searchBook(bookID);
-            library.checkout(chosenBook);
-
-            return UIStrings.CHECKOUT_SUCCESS;
+            return library.checkout(chosenBook);
         }
 
         if (option.equals("9")) {

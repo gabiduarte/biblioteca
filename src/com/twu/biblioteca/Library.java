@@ -30,9 +30,13 @@ public class Library {
         return null;
     }
 
-    public boolean checkout(Book book) {
-        book.setAvailable(false);
-        return !book.isAvailable();
+    public String checkout(Book book) {
+        if (book.isAvailable()) {
+            book.setAvailable(false);
+            return UIStrings.CHECKOUT_SUCCESS;
+        }
+
+        return UIStrings.CHECKOUT_FAIL;
     }
 
     public void createBookShelf() {

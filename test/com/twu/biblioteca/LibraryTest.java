@@ -49,4 +49,16 @@ public class LibraryTest {
         Book book = library.searchBook(1);
         assertEquals("Harry Potter", book.getName());
     }
+
+    @Test
+    public void shouldReturnSuccessMessageWhenCheckingOutAvailableBook() throws Exception {
+        assertEquals("Thank you! Enjoy the book", library.checkout(new Book(1, "", "", "")));
+    }
+
+    @Test
+    public void shouldReturnFailedMessageWhenCheckingOutUnavailableBook() throws Exception {
+        Book unavailableBook = new Book(1, "", "", "");
+        unavailableBook.setAvailable(false);
+        assertEquals("That book is not available.", library.checkout(unavailableBook));
+    }
 }
