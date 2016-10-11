@@ -9,7 +9,7 @@ public class BibliotecaAppTest {
     @Test
     public void shouldWelcomeUserWhenStarting() throws Exception {
         BibliotecaApp app = new BibliotecaApp();
-        assertEquals("Welcome to Biblioteca!", app.welcome());
+        assertEquals("Welcome to Biblioteca!\n", app.welcome());
     }
 
     @Test
